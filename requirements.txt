@@ -1,0 +1,13 @@
+easydict==1.13
+efficientnet_pytorch==0.7.0
+geopandas==0.14.4
+matplotlib==3.5.3
+numpy==1.24.3
+nuscenes_devkit==1.1.11
+opencv_python==4.11.0.86
+opencv_python_headless==4.11.0.86
+pyquaternion==0.9.9
+Shapely==1.8.5.post1
+torch==2.0.0
+torchvision==0.15.0
+tqdm==4.64.1

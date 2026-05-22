@@ -1,0 +1,45 @@
+{
+    "name": "map_loc",
+    "dataset": "nuscenes",
+    "version": "trainval",
+    "dataroot": "/data/datasets/nuscenes",
+    "weightsdir": "./runs/weights",
+    "pretrained_weights_path": "",
+    "map_folder": "/data/datasets/nuscenes",
+    "OSM_path": "/data/datasets/OSM",
+
+    "gpuid": 1,
+    "outC": 2,
+    "H": 900,
+    "W": 1600,
+    "resize_lim": [0.193, 0.225],
+    "final_dim": [128, 352],
+    "bot_pct_lim": [0.0, 0.22],
+    "rot_lim": [-5.4, 5.4],
+    "rand_flip": true,
+    "ncams": 5,
+    "max_grad_norm": 1.0,
+    "pos_weight": 2.13,
+
+    "logdir": "./runs/logs",
+    "xbound": [-32.0, 32.0, 0.25],
+    "ybound": [-32.0, 32.0, 0.25],
+    "zbound": [-10.0, 10.0, 20.0],
+    "dbound": [4.0, 27.0, 1.0],
+
+    "xbound_sd": [-64.0, 64.0, 0.5],
+    "ybound_sd": [-64.0, 64.0, 0.5],
+    "zbound_sd": [-10.0, 10.0, 20.0],
+
+    "batch_sz": 16,
+    "nworkers": 32,
+    "lr": 0.00035,
+    "wdecay": 0.0005,
+    "epsilon": 1e-7, 
+    "num_steps": 180000,
+
+    "ckpt_path": "",
+    "SUM_FREQ": 100,
+
+    "is_sdmap": false
+}
