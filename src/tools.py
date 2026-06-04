@@ -349,8 +349,8 @@ def localize_loss(four_preds, uv_trans, ori_gt, refrence_center, sz, egopose, tr
         dx = x[:, 0, 1] - x[:, 0, 0]
         dy = x[:, 1, 0] - x[:, 1, 1]
         ori = torch.rad2deg(torch.atan2(dx, dy))
-        ori_loss = (ori - ori_gt).abs()
-        ori_loss = ori_loss.nanmean()
+        ori_error = (ori - ori_gt).abs()
+        ori_loss = ori_error.nanmean()
 
         x = x[:,:2, 0]
         i_loss = torch.nanmean((x-y)**2)
@@ -367,10 +367,10 @@ def localize_loss(four_preds, uv_trans, ori_gt, refrence_center, sz, egopose, tr
         '2': (err_meters < 2).float().mean().item(),
         '5': (err_meters < 5).float().mean().item(),
         '10': (err_meters < 10).float().mean().item(),
-        'o1': (ori_loss < 1).float().mean().item(),
-        'o2': (ori_loss < 2).float().mean().item(),
-        'o5': (ori_loss < 5).float().mean().item(),
-        'o10': (ori_loss < 10).float().mean().item(),
+        'o1': (ori_error < 1).float().mean().item(),
+        'o2': (ori_error < 2).float().mean().item(),
+        'o5': (ori_error < 5).float().mean().item(),
+        'o10': (ori_error < 10).float().mean().item(),
     }
 
     return total_loss, metrics

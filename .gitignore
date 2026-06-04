@@ -1,3 +1,7 @@
 src/checkpoints/
 __pycache__/
 src/watch/
+
+# Unused files, excluded from version control
+src/modules/utils/loss_factory.py
+src/modules/utils/Mercator.py
